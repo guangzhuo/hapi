@@ -3,8 +3,8 @@
 // const totalArray = [...cars, ...tests]
 // module.exports = totalArray
 
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
 const basename = path.basename(__filename); // 当前文件名
 
@@ -24,11 +24,7 @@ const readFileList = (dir, routes = []) => {
       readFileList(path.join(dir, item), routes); //递归读取文件
     } else {
       // 过滤掉隐藏文件、当前文件、非 js 文件r
-      if (
-        item.indexOf(".") !== 0 &&
-        item !== basename &&
-        item.slice(-3) === ".js"
-      ) {
+      if (item.indexOf('.') !== 0 && item !== basename && item.slice(-3) === '.js') {
         // 引入路由模块
         let arr = require(path.join(dir, item));
         // 汇总
