@@ -1,11 +1,11 @@
-const boom = require("boom");
-const Car = require("../database/models/Car");
+const boom = require('boom');
+const Car = require('../database/models/Car');
 
 const getCars = async (request, h) => {
   try {
     // const aa = new Car({ name: "333" });
     // await aa.save();
-    const cars = await Car.findOne({ id: "10006546" });
+    const cars = await Car.findOne({ id: '10006546' });
     return cars;
   } catch (error) {
     console.log(error);
